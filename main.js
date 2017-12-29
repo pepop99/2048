@@ -132,6 +132,60 @@ var left = function(){
 
 var up = function(){
 	console.log("up")
+	var i,j;
+	for(j=0;j<2;j++)
+	{
+	for(i=12;i>0;i=i-4)
+	{
+		if(child[i].innerHTML==child[i-4].innerHTML){
+			child[i-4].innerHTML=child[i-4].innerHTML*2;
+			child[i].innerHTML=0;
+		}
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+			console.log("yes");
+			child[i-4].innerHTML=child[i].innerHTML;
+			child[i].innerHTML=0;
+		}
+	}
+	for(i=13;i>1;i=i-4)
+	{
+		if(child[i].innerHTML==child[i-4].innerHTML){
+			child[i-4].innerHTML=child[i-4].innerHTML*2;
+			child[i].innerHTML=0;
+		}
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+			console.log("yes");
+			child[i-4].innerHTML=child[i].innerHTML;
+			child[i].innerHTML=0;
+		}
+	}
+	for(i=14;i>2;i=i-4)
+	{
+		if(child[i].innerHTML==child[i-4].innerHTML){
+			child[i-4].innerHTML=child[i-4].innerHTML*2;
+			child[i].innerHTML=0;
+		}
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+			console.log("yes");
+			child[i-4].innerHTML=child[i].innerHTML;
+			child[i].innerHTML=0;
+		}
+	}
+	for(i=15;i>3;i=i-4)
+	{
+		if(child[i].innerHTML==child[i-4].innerHTML){
+			child[i-4].innerHTML=child[i-4].innerHTML*2;
+			child[i].innerHTML=0;
+		}
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+			console.log("yes");
+			child[i-4].innerHTML=child[i].innerHTML;
+			child[i].innerHTML=0;
+		}
+	}
+	color();
+}
+
 }
 
 var right = function(){
@@ -193,6 +247,60 @@ var right = function(){
 }
 var down = function(){
 	console.log("down");
+	var i,j;
+	for(j=0;j<2;j++)
+	{
+	for(i=0;i<12;i=i+1)
+	{
+		if(child[i].innerHTML==child[i+4].innerHTML){
+			child[i+4].innerHTML=child[i+4].innerHTML*2;
+			child[i].innerHTML=0;
+		}
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+			console.log("yes");
+			child[i+4].innerHTML=child[i].innerHTML;
+			child[i].innerHTML=0;
+		}
+	}
+	for(i=1;i<13;i=i+4)
+	{
+		if(child[i].innerHTML==child[i+4].innerHTML){
+			child[i+4].innerHTML=child[i+4].innerHTML*2;
+			child[i].innerHTML=0;
+		}
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+			console.log("yes");
+			child[i+4].innerHTML=child[i].innerHTML;
+			child[i].innerHTML=0;
+		}
+	}
+	for(i=2;i<14;i=i+4)
+	{
+		if(child[i].innerHTML==child[i+4].innerHTML){
+			child[i+4].innerHTML=child[i+4].innerHTML*2;
+			child[i].innerHTML=0;
+		}
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+			console.log("yes");
+			child[i+4].innerHTML=child[i].innerHTML;
+			child[i].innerHTML=0;
+		}
+	}
+	for(i=3;i<15;i=i+4)
+	{
+		if(child[i].innerHTML==child[i+4].innerHTML){
+			child[i+4].innerHTML=child[i+4].innerHTML*2;
+			child[i].innerHTML=0;
+		}
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+			console.log("yes");
+			child[i+4].innerHTML=child[i].innerHTML;
+			child[i].innerHTML=0;
+		}
+	}
+	color();
+}
+
 }
 
 document.onkeydown = function(e) {
