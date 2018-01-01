@@ -27,23 +27,50 @@ var color = function(){
 				child[i].style.color="#776d64";
 			}
 		else if(child[i].innerHTML==8)
-			child[i].style.background="#f2b179";
+			{
+				child[i].style.background="#f2b179";
+				child[i].style.color="white";
+			}
 		else if(child[i].innerHTML==16)
-			child[i].style.background="#ec8d54";
+			{
+				child[i].style.background="#ec8d54";
+				child[i].style.color="white";
+			}
 		else if(child[i].innerHTML==32)
-			child[i].style.background="#f27b5e";
+			{
+				child[i].style.background="#f27b5e";
+				child[i].style.color="white";
+			}
 		else if(child[i].innerHTML==64)
-			child[i].style.background="#ea593a";
+			{
+				child[i].style.background="#ea593a";
+				child[i].style.color="white";
+			}
 		else if(child[i].innerHTML==128)
-			child[i].style.background="#f4d86d";
+			{
+				child[i].style.background="#f4d86d";
+				child[i].style.color="white";
+			}
 		else if(child[i].innerHTML==256)
-			child[i].style.background="#eccb60";
+			{
+				child[i].style.background="#eccb60";
+				child[i].style.color="white";
+			}
 		else if(child[i].innerHTML==512)
-			child[i].style.background="#ecc750";
+			{
+				child[i].style.background="#ecc750";
+				child[i].style.color="white";
+			}
 		else if(child[i].innerHTML==1024)
-			child[i].style.background="#ecc440";
+			{
+				child[i].style.background="#ecc440";
+				child[i].style.color="white";
+			}
 		else if(child[i].innerHTML==2048)
-			child[i].style.background="#ecc12f";
+			{
+				child[i].style.background="#ecc12f";
+				child[i].style.color="white";
+			}
 		else if(child[i].innerHTML==0)
 			{
 				child[i].style.color="#ccc0b3";
@@ -78,7 +105,7 @@ var newnum = function(){
 var left = function(){
 	console.log("left");
 	var i,j,c=0;
-	for(j=0;j<2;j++)
+	for(j=0;j<3;j++)
 	{
 	for(i=3;i>0;i--)
 	{
@@ -87,11 +114,12 @@ var left = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i-1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=7;i>4;i--)
@@ -101,11 +129,12 @@ var left = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i-1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=11;i>8;i--)
@@ -115,11 +144,12 @@ var left = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i-1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=15;i>12;i--)
@@ -129,11 +159,12 @@ var left = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i-1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 }
@@ -146,7 +177,7 @@ color();
 var up = function(){
 	console.log("up")
 	var i,j,c=0;
-	for(j=0;j<2;j++)
+	for(j=0;j<3;j++)
 	{
 	for(i=12;i>0;i=i-4)
 	{
@@ -155,11 +186,12 @@ var up = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i-4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=13;i>1;i=i-4)
@@ -169,11 +201,12 @@ var up = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i-4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=14;i>2;i=i-4)
@@ -183,11 +216,12 @@ var up = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i-4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=15;i>3;i=i-4)
@@ -197,11 +231,12 @@ var up = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i-4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 }
@@ -214,7 +249,7 @@ color();
 var right = function(){
 	console.log("right");
 	var i,j,c=0;
-	for(j=0;j<2;j++)
+	for(j=0;j<3;j++)
 	{
 	for(i=0;i<3;i++)
 	{
@@ -223,11 +258,12 @@ var right = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i+1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=4;i<7;i++)
@@ -237,11 +273,12 @@ var right = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i+1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=8;i<11;i++)
@@ -251,11 +288,12 @@ var right = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i+1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=12;i<15;i++)
@@ -265,11 +303,12 @@ var right = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i+1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 }
@@ -281,20 +320,21 @@ color();
 var down = function(){
 	console.log("down");
 	var i,j,c=0;
-	for(j=0;j<2;j++)
+	for(j=0;j<3;j++)
 	{
-	for(i=0;i<12;i=i+1)
+	for(i=0;i<12;i=i+4)
 	{
 		if(child[i].innerHTML==child[i+4].innerHTML&&child[i].innerHTML!=0){
 			child[i+4].innerHTML=child[i+4].innerHTML*2;
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i+4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=1;i<13;i=i+4)
@@ -304,11 +344,12 @@ var down = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i+4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=2;i<14;i=i+4)
@@ -318,11 +359,12 @@ var down = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i+4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 	for(i=3;i<15;i=i+4)
@@ -332,11 +374,12 @@ var down = function(){
 			child[i].innerHTML=0;
 			c++;
 		}
-		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+			if(child[i].innerHTML!=0)
+				c++;
 			console.log("yes");
 			child[i+4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
-			c++;
 		}
 	}
 }
