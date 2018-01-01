@@ -1,12 +1,17 @@
 child = document.getElementsByClassName("child");
 
 var i;
-var s1 = Math.floor(Math.random() * 16);
-var sn1 = Math.floor(Math.random() * 1) + 2;
-var s2 = Math.floor(Math.random() * 16);
-var sn2 = Math.floor(Math.random() * 3) * 2;
-var num = [];
-var num1 = [];
+
+function randomblock(){
+
+	var s = Math.floor(Math.random() * 16);
+	return s;
+}
+function randomnum() {
+
+var sn = Math.floor(Math.random() * 3) * 2;
+return sn;
+}
 
 var color = function(){
 	for(i=0;i<16;i++)
@@ -49,257 +54,295 @@ var color = function(){
 color();
 
 var begin = function(){
-	child[s1].innerHTML=sn1;
-	if(s1==s2)
-		s2=15-s1;
-	if(sn2==0)
-		sn2=2;
-	child[s2].innerHTML=sn2;
+	child[randomblock()].innerHTML=2;
+	var n=randomnum();
+	while(n==0)
+		n=randomnum();
+	child[randomblock()].innerHTML=n;
 	color();
 };
 
-// var j=0;
-// var begin = function(){
-// 	num[j]=s1;
-// 	num1[j]=sn1;
-// 	console.log(num[j],num1[j]);
-// 	j++;
-// 	num[j]=s1;
-// 	num1[j]=sn1;
-// 	console.log(num[j],num1[j]);
-// 		color();
-// };
-
 begin();
+
+var newnum = function(){
+	var n=randomnum();
+	var b=randomblock()
+	while(n==0||child[b].innerHTML!=0)
+		{
+			n=randomnum();
+			b=randomblock();
+		}
+	child[b].innerHTML=n;
+}
 
 var left = function(){
 	console.log("left");
-	var i,j;
+	var i,j,c=0;
 	for(j=0;j<2;j++)
 	{
 	for(i=3;i>0;i--)
 	{
-		if(child[i].innerHTML==child[i-1].innerHTML){
+		if(child[i].innerHTML==child[i-1].innerHTML&&child[i].innerHTML!=0){
 			child[i-1].innerHTML=child[i-1].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i-1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=7;i>4;i--)
 	{
-		if(child[i].innerHTML==child[i-1].innerHTML){
+		if(child[i].innerHTML==child[i-1].innerHTML&&child[i].innerHTML!=0){
 			child[i-1].innerHTML=child[i-1].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i-1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=11;i>8;i--)
 	{
-		if(child[i].innerHTML==child[i-1].innerHTML){
+		if(child[i].innerHTML==child[i-1].innerHTML&&child[i].innerHTML!=0){
 			child[i-1].innerHTML=child[i-1].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i-1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=15;i>12;i--)
 	{
-		if(child[i].innerHTML==child[i-1].innerHTML){
+		if(child[i].innerHTML==child[i-1].innerHTML&&child[i].innerHTML!=0){
 			child[i-1].innerHTML=child[i-1].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i-1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i-1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
-	color();
 }
-	
+if(c>0)
+	newnum();
+color();
+
 }	
 
 var up = function(){
 	console.log("up")
-	var i,j;
+	var i,j,c=0;
 	for(j=0;j<2;j++)
 	{
 	for(i=12;i>0;i=i-4)
 	{
-		if(child[i].innerHTML==child[i-4].innerHTML){
+		if(child[i].innerHTML==child[i-4].innerHTML&&child[i].innerHTML!=0){
 			child[i-4].innerHTML=child[i-4].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i-4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=13;i>1;i=i-4)
 	{
-		if(child[i].innerHTML==child[i-4].innerHTML){
+		if(child[i].innerHTML==child[i-4].innerHTML&&child[i].innerHTML!=0){
 			child[i-4].innerHTML=child[i-4].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i-4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=14;i>2;i=i-4)
 	{
-		if(child[i].innerHTML==child[i-4].innerHTML){
+		if(child[i].innerHTML==child[i-4].innerHTML&&child[i].innerHTML!=0){
 			child[i-4].innerHTML=child[i-4].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i-4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=15;i>3;i=i-4)
 	{
-		if(child[i].innerHTML==child[i-4].innerHTML){
+		if(child[i].innerHTML==child[i-4].innerHTML&&child[i].innerHTML!=0){
 			child[i-4].innerHTML=child[i-4].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i-4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i-4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
-	color();
 }
+if(c>0)
+	newnum();
+color();
 
 }
 
 var right = function(){
 	console.log("right");
-	var i,j;
+	var i,j,c=0;
 	for(j=0;j<2;j++)
 	{
 	for(i=0;i<3;i++)
 	{
-		if(child[i].innerHTML==child[i+1].innerHTML){
+		if(child[i].innerHTML==child[i+1].innerHTML&&child[i].innerHTML!=0){
 			child[i+1].innerHTML=child[i+1].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i+1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=4;i<7;i++)
 	{
-		if(child[i].innerHTML==child[i+1].innerHTML){
+		if(child[i].innerHTML==child[i+1].innerHTML&&child[i].innerHTML!=0){
 			child[i+1].innerHTML=child[i+1].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i+1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=8;i<11;i++)
 	{
-		if(child[i].innerHTML==child[i+1].innerHTML){
+		if(child[i].innerHTML==child[i+1].innerHTML&&child[i].innerHTML!=0){
 			child[i+1].innerHTML=child[i+1].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i+1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=12;i<15;i++)
 	{
-		if(child[i].innerHTML==child[i+1].innerHTML){
+		if(child[i].innerHTML==child[i+1].innerHTML&&child[i].innerHTML!=0){
 			child[i+1].innerHTML=child[i+1].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i+1].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i+1].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
-	color();
 }
+if(c>0)
+	newnum();
+color();
 
 }
 var down = function(){
 	console.log("down");
-	var i,j;
+	var i,j,c=0;
 	for(j=0;j<2;j++)
 	{
 	for(i=0;i<12;i=i+1)
 	{
-		if(child[i].innerHTML==child[i+4].innerHTML){
+		if(child[i].innerHTML==child[i+4].innerHTML&&child[i].innerHTML!=0){
 			child[i+4].innerHTML=child[i+4].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i+4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=1;i<13;i=i+4)
 	{
-		if(child[i].innerHTML==child[i+4].innerHTML){
+		if(child[i].innerHTML==child[i+4].innerHTML&&child[i].innerHTML!=0){
 			child[i+4].innerHTML=child[i+4].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i+4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=2;i<14;i=i+4)
 	{
-		if(child[i].innerHTML==child[i+4].innerHTML){
+		if(child[i].innerHTML==child[i+4].innerHTML&&child[i].innerHTML!=0){
 			child[i+4].innerHTML=child[i+4].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i+4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
 	for(i=3;i<15;i=i+4)
 	{
-		if(child[i].innerHTML==child[i+4].innerHTML){
+		if(child[i].innerHTML==child[i+4].innerHTML&&child[i].innerHTML!=0){
 			child[i+4].innerHTML=child[i+4].innerHTML*2;
 			child[i].innerHTML=0;
+			c++;
 		}
-		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML){
+		else if(child[i].innerHTML-child[i+4].innerHTML==child[i].innerHTML&&child[i].innerHTML!=0){
 			console.log("yes");
 			child[i+4].innerHTML=child[i].innerHTML;
 			child[i].innerHTML=0;
+			c++;
 		}
 	}
-	color();
 }
+if(c>0)
+	newnum();
+color();
 
 }
 
@@ -319,6 +362,9 @@ document.onkeydown = function(e) {
             break;
     }
 };
+
+
+
 
 
 
